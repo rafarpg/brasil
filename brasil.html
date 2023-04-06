@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    justify-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.boneco
+{
+    position: absolute;
+    top: 400px;
+    left: 550px;
+    width: 80px;
+}
+.mapa
+{
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    justify-items: center;
+    position: absolute;
+}
+.texto_rs
+{
+    display: none;
+    width: 400px;
+    height: 200px;
+    background-color: yellow;
+    font-size: 18px;
+    text-align: justify;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow: 1px 1px black;
+}
+.texto_sc
+{
+    display: none;
+    width: 400px;
+    height: 220px;
+    background-color: rgb(0, 255, 13);
+    font-size: 18px;
+    text-align: justify;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    box-shadow: 1px 1px black;
+}
+</style>
+<body>
+    <map name="meu_mapa">
+        <area onmouseleave="esconder();"onmouseover="mostratexto('RS');" shape="circle" coords="257,439,20" href="https://www.estado.rs.gov.br/inicial" target="_blank"> 
+        <div class="texto_rs"id="texto_rs">Rio Grande do Sul é o estado mais a sul do Brasil e faz fronteira com a Argentina e o Uruguai. A nordeste, a montanhosa Serra Gaúcha alberga a região vinícola do Vale dos Vinhedos e inclui cidades turísticas de estilo alemão como Gramado e Canela, famosas pelas paisagens naturais pitorescas. Porto Alegre, a capital, é um grande porto com estruturas clássicas como o Mercado Público e a Catedral Metropolitana, no centro histórico.</div>
+        <area onmouseleave="esconder();"onmouseover="mostratexto('SC');"shape="circle" coords="297,412,15" href="https://www.sc.gov.br/" target="_blank">
+        <div class="texto_sc"id="texto_sc">Santa Catarina é um estado na região sul do Brasil. Com uma longa costa com o Atlântico e muitas ilhas, ela é conhecida por suas praias e montanhas. Florianópolis, a capital, tem um mercado público tradicional com bares, restaurantes e barracas de comida, além de um museu histórico instalado em um palácio do governo colonial do século 19. Florianópolis está basicamente na ilha de Santa Catarina, que conta com resorts de praia na extremidade norte.</div>
+        <area shape="circle" coords="278,375,20" href="https://mundoeducacao.uol.com.br/geografia/parana.htm" target="_blank">
+        <area shape="circle" coords="313,350,20" href="https://pt.wikipedia.org/wiki/S%C3%A3o_Paulo" target="_blank">
+        <area shape="circle" coords="237,323,22" href="http://www.ms.gov.br/" target="_blank">
+        <area shape="circle" coords="381,352,7" href="https://tntsports.com.br/futebolbrasileiro/Flamengo-lidera-o-ranking-da-IFFHS-de-melhor-clube-do-mundo-em-janeiro-de-2023-20230118-0014.html" target="_blank">
+        <area shape="circle" coords="410,321,7 " href="https://www.es.gov.br/" target="_blank">
+        <area shape="circle" coords="367,313,25" href="https://www.mg.gov.br/" target="_blank">
+        <area shape="circle" coords="326,267,4" href="https://www.df.gov.br/" target="_blank">
+        <area shape="circle" coords="229,232,30" href="https://www.mt.gov.br/" target="_blank">
+        <area shape="circle" coords="301,273,20" href="https://www.go.gov.br/" target="_blank">
+        <area shape="circle" coords="394,222,20" href="https://www.ba.gov.br/" target="_blank">
+        <area shape="circle" coords="455,210,5" href="https://www.se.gov.br/" target="_blank">
+        <area shape="circle" coords="470,199,5" href="https://www.al.gov.br/" target="_blank">
+        <area shape="circle" coords="448,180,7" href="https://www.pe.gov.br/" target="_blank">
+        <area shape="circle" coords="472,166,5" href="https://www.pb.gov.br/" target="_blank">
+        <area shape="circle" coords="468,147,6" href="https://www.rn.gov.br/" target="_blank">
+        <area shape="circle" coords="431,138,10" href="https://www.ce.gov.br/" target="_blank">
+        <area shape="circle" coords="387,171,10" href="https://www.pi.gov.br/" target="_blank">
+        <area shape="circle" coords="358,134,20" href="https://www.to.gov.br/" target="_blank">
+        <area shape="circle" coords="361,133,20" href="https://www.ma.gov.br/" target="_blank">
+        <area shape="circle" coords="264,132,30" href="https://www.pa.gov.br/" target="_blank">
+        <area shape="circle" coords="277,52,10" href="https://www.ap.gov.br/" target="_blank">
+        <area shape="circle" coords="122,116,35" href="https://www.am.gov.br/" target="_blank">
+        <area shape="circle" coords="47,186,10" href="https://www.ac.gov.br/" target="_blank">
+        <area shape="circle" coords="158,46,10" href="https://www.rr.gov.br/" target="_blank">
+        <area shape="circle" coords="142,207,10" href="https://www.ro.gov.br/" target="_blank">
+    </map>
+    <img src="mapa_brasil.jpg" id="brasil" class="mapa" usemap= "#meu_mapa">
+    <img src="boneco.gif" class="boneco" id="boneco" >
+    <script>
+        function esconder()
+        {
+            texto_rs.style.display="none";
+            texto_sc.style.display="none";
+        }
+        function mostratexto(estado)
+        {
+            if (estado =='RS')
+            {
+                texto_rs.style.display = "block";
+            }
+            if(estado == 'SC')
+            {
+                texto_sc.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
